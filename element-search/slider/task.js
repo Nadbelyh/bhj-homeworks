@@ -9,7 +9,7 @@ sliderArrowNext.addEventListener("click", () => sliderNext());
 function sliderPrev() {
   const prevIndex = imageIndex;
   if (imageIndex === 0) {
-    imageIndex = 4;
+    imageIndex = sliderItems.length - 1;
   } else {
     imageIndex = imageIndex - 1;
   }
@@ -20,7 +20,7 @@ function sliderPrev() {
 function sliderNext() {
   const prevIndex = imageIndex;
   imageIndex = imageIndex + 1;
-  if (imageIndex === 5) {
+  if (imageIndex === sliderItems.length) {
     imageIndex = 0;
   }
   changeDotAndImage(prevIndex, imageIndex);

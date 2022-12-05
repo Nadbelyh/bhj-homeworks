@@ -1,19 +1,13 @@
-const menuLinks = document.getElementsByClassName("menu__link");
-const menuItems = document.getElementsByClassName("menu__item");
+const menuLinks = Array.from(document.getElementsByClassName("menu__link"));
 
-for (let i = 0; i < menuLinks.length; i++) {
-  menuLinks.item(i).onclick = () => {
-    for (
-      let j = 0;
-      j < document.querySelectorAll("ul.menu_active").length;
-      j++
-    ) {
-      document
-        .querySelectorAll("ul.menu_active")
-        .item(j)
-        .classList.remove("menu_active");
+menuLinks.forEach((item) =>
+  item.addEventListener("click", function (event) {
+    if (item.parentElement.getElementsByClassName("menu_sub").length == 1) {
+      event.preventDefault();
+      let menuSub = Array.from(
+        item.parentElement.getElementsByClassName("menu_sub")
+      );
+      menuSub.forEach((sub) => sub.classList.toggle("menu_active"));
     }
-    menuItems.item(i).querySelector("ul").classList.add("menu_active");
-    return false;
-  };
-}
+  })
+);
