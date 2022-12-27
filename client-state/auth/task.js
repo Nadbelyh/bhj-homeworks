@@ -3,7 +3,7 @@ const form = document.forms.signin__form;
 const authButton = document.getElementById("signin__btn");
 const welcomeDiv = document.getElementById("welcome");
 const userIdSpan = document.getElementById("user_id");
-const logoutButton = document.querySelector(".logout");
+const logoutButton = document.getElementById("logout__btn");
 
 getUserId();
 

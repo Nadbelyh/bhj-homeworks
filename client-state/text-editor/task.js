@@ -1,6 +1,6 @@
 const textarea = document.getElementById("editor");
 const text = localStorage.getItem("textarea");
-const clearButton = document.querySelector(".clear-button");
+const clearButton = document.getElementById("clear_button");
 
 if (text) {
   textarea.value = text;
